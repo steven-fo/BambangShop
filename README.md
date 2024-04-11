@@ -50,13 +50,13 @@ You can install Postman via this website: https://www.postman.com/downloads/
 ## Mandatory Checklists (Publisher)
 -   [X] Clone https://gitlab.com/ichlaffterlalu/bambangshop to a new repository.
 -   **STAGE 1: Implement models and repositories**
-    -   [ ] Commit: `Create Subscriber model struct.`
-    -   [ ] Commit: `Create Notification model struct.`
-    -   [ ] Commit: `Create Subscriber database and Subscriber repository struct skeleton.`
-    -   [ ] Commit: `Implement add function in Subscriber repository.`
-    -   [ ] Commit: `Implement list_all function in Subscriber repository.`
-    -   [ ] Commit: `Implement delete function in Subscriber repository.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
+    -   [X] Commit: `Create Subscriber model struct.`
+    -   [X] Commit: `Create Notification model struct.`
+    -   [X] Commit: `Create Subscriber database and Subscriber repository struct skeleton.`
+    -   [X] Commit: `Implement add function in Subscriber repository.`
+    -   [X] Commit: `Implement list_all function in Subscriber repository.`
+    -   [X] Commit: `Implement delete function in Subscriber repository.`
+    -   [X] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
 -   **STAGE 2: Implement services and controllers**
     -   [ ] Commit: `Create Notification service struct skeleton.`
     -   [ ] Commit: `Implement subscribe function in Notification service.`
@@ -77,6 +77,10 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
+
+1. Single model struct sudah cukup untuk kasus bambangshop kali ini. Interface diperlukan kalau ada beberapa tipe dengan behaviour yang berbeda-beda pada subscriber nya. Namun, pada modul ini, subscriber hanya memiliki 1 tipe atau semua subcriber sama, jadi tidak perlu menggunakan interface.
+2. Menurut saya, penggunaan dashmap lebih cocok untuk kasus ini. DashMap menggunakan key input untuk mendapatkan value berdasarkan key tersebut. Jadi, pencarian data atau value akan lebih mudah karena kita hanya perlu meng-input id atau url saja.
+3. Pada kasus ini, kedua singleton dan dashmap sama-sama diperlukan karena keduanya saling melengkapi. Singleton memastikan bahwa satu instance hanya akan ada di satu interface. Selain itu, dashmap akan memastikan bahwa data subscribers yang ada tetap aman dipakai oleh thread-thread yang berbeda.
 
 #### Reflection Publisher-2
 
