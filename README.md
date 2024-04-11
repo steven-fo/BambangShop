@@ -58,12 +58,12 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [X] Commit: `Implement delete function in Subscriber repository.`
     -   [X] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
 -   **STAGE 2: Implement services and controllers**
-    -   [ ] Commit: `Create Notification service struct skeleton.`
-    -   [ ] Commit: `Implement subscribe function in Notification service.`
-    -   [ ] Commit: `Implement subscribe function in Notification controller.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification service.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
+    -   [X] Commit: `Create Notification service struct skeleton.`
+    -   [X] Commit: `Implement subscribe function in Notification service.`
+    -   [X] Commit: `Implement subscribe function in Notification controller.`
+    -   [X] Commit: `Implement unsubscribe function in Notification service.`
+    -   [X] Commit: `Implement unsubscribe function in Notification controller.`
+    -   [X] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
     -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
     -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
@@ -83,5 +83,9 @@ This is the place for you to write reflections:
 3. Pada kasus ini, kedua singleton dan dashmap sama-sama diperlukan karena keduanya saling melengkapi. Singleton memastikan bahwa satu instance hanya akan ada di satu interface. Selain itu, dashmap akan memastikan bahwa data subscribers yang ada tetap aman dipakai oleh thread-thread yang berbeda.
 
 #### Reflection Publisher-2
+
+1. Menurut saya, service dan repository harus dipisah dari model agar lebih mudah dibaca dan diubah kalau ingin ada perubahan. Jika ketiga fungisionalitas tersebut digabung menjadi 1 file, tentunya file tersebut akan terlalu panjang dan susah untuk dibaca. Kalau ketiga fungsionalitas tersebut dipisah menjadi file-file nya masing-masing, setiap file akan lebih mudah dibaca dan mudha untuk diubah.
+2. Jika kita hanya menggunakan model saja (service dan repository digabung menjadi 1 file), maka file tersebut akan susah dibaca. Ditambah, kali ini kita memiliki 3 model, yaitu program, subscriber, dan notification, tentunya file tersebut akan sangat panjang dan susah untuk dibaca. Kesulitan untuk dibaca juga mempengaruhi tingkat kesulitan mengubah atau mengutak-atik kodenya saat ingin ada perubahan.
+3. Postman berfungsi untuk mengetes API dari suatu projek. Menurut saya, Postman sangat berguna dalam mengetes API karena fitur-fitur yang disediakan, seperti membuat request dengan berbagai macam token ataupun body request, bisa kustomisasi environment suatu collection, dan terdapat fitur monitoring juga.
 
 #### Reflection Publisher-3
