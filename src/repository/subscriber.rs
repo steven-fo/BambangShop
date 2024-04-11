@@ -18,4 +18,12 @@ impl SubscriberRepository {
         SUBSRICBERS.get(product_type).unwrap().insert(subscriber_value.url.clone(), subscriber_value);
         return subscriber;
     }
+
+    pub fn list_all(product_type: &str) -> Vec<Subscriber> {
+        if SUBSRICBERS.get(product_type).is_none() {
+            SUBSRICBERS.insert(String::from(product_type), DashMap::new());
+        };
+
+        return SUBSRICBERS.get(product_type).unwrap().iter().map(|f|  f.value().clone()).collect();
+    }
 }
