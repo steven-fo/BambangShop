@@ -65,11 +65,11 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [X] Commit: `Implement unsubscribe function in Notification controller.`
     -   [X] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
-    -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
-    -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
-    -   [ ] Commit: `Implement publish function in Program service and Program controller.`
-    -   [ ] Commit: `Edit Product service methods to call notify after create/delete.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
+    -   [X] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
+    -   [X] Commit: `Implement notify function in Notification service to notify each Subscriber.`
+    -   [X] Commit: `Implement publish function in Program service and Program controller.`
+    -   [X] Commit: `Edit Product service methods to call notify after create/delete.`
+    -   [X] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
 
 ## Your Reflections
 This is the place for you to write reflections:
@@ -89,3 +89,7 @@ This is the place for you to write reflections:
 3. Postman berfungsi untuk mengetes API dari suatu projek. Menurut saya, Postman sangat berguna dalam mengetes API karena fitur-fitur yang disediakan, seperti membuat request dengan berbagai macam token ataupun body request, bisa kustomisasi environment suatu collection, dan terdapat fitur monitoring juga.
 
 #### Reflection Publisher-3
+
+1. Pada kasus ini, kita menggunakan variasi <strong>push</strong> model dari observer pattern, dimana publisher melakukan push data atau update kepada subscriber.
+2. Keuntungan dalam menggunakan variasi <strong>pull</strong> model adalah lebih efisien karena update atau perubahan hanya diterima ketika dibutuhkan saja. Kekurangan dari variasi ini adalah keterlambatan pembaruan dimana suatu informasi baru hanya dapat diterima saat subscriber meminta informasi tersebut.
+3. Multi-threading pada projek ini digunakan agar dapat mengirimkan notifikasi kepada semua subscriber secara asinkronus. Jika multi-threading tidak digunakan, maka notifikasi yang dikirimkan ke subscriber akan semakin lama karena dilakukan secara sinkronus.
